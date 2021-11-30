@@ -36,9 +36,35 @@ CONSTRAINT shipment_courier_id_FK FOREIGN KEY(courier_id) REFERENCES courier(id)
 CONSTRAINT shipment_order_id_FK FOREIGN KEY(order_id) REFERENCES orders(id)
 );
 
+/* untuk otomatis input shipment ketika create orders di website */
+CREATE OR REPLACE FUNCTION add_ship(o_id INT, o_date DATE)
+RETURNS integer AS $$
+BEGIN
+INSERT INTO shipment (courier_id, order_id, shipment_date, shipment_status)
+VALUES(floor(random()* (5-1 + 1) + 1),o_id,o_date + 3,'Belum dikirim');
+RETURN 1;
+END;
+$$ LANGUAGE plpgsql;
+
+/* create view untuk display di website */
+/* on going alias belum dikirim */
+CREATE OR REPLACE VIEW ongoing AS
+SELECT S.id, S.order_id, C.name as courier_name, S.shipment_date, S.shipment_status
+FROM shipment S, orders O, courier C
+WHERE C.id = S.courier_id AND S.shipment_status = 'Belum dikirim'
+ORDER BY S.id;
+/* done alias sudah dikirim */
+CREATE OR REPLACE VIEW done AS
+SELECT S.id, S.order_id, C.name as courier_name, S.shipment_date, S.shipment_status
+FROM shipment S, orders O, courier C
+WHERE C.id = S.courier_id AND S.shipment_status = 'Sudah dikirim'
+ORDER BY S.id;
 
 
-''' contoh input data '''
+
+/* contoh input data */
+INSERT INTO customers (name,address,pcode,phone_number)
+VALUES('ini nama','ini alamat', '12345', '012345678912');
 INSERT INTO customers (name,address,pcode,phone_number)
 VALUES('ini nama','ini alamat', '12345', '012345678912');
 
@@ -46,6 +72,14 @@ INSERT INTO orders (sender_id,recipient_id,item_type,item_qty,order_date,shipmen
 VALUES(1,2,'elektronik',1,'10-Oct-2021','Regular');
 
 INSERT INTO courier (name) VALUES('kurir 1');
+INSERT INTO courier (name) VALUES('kurir 2');
+INSERT INTO courier (name) VALUES('kurir 3');
+INSERT INTO courier (name) VALUES('kurir 4');
+INSERT INTO courier (name) VALUES('kurir 5');
 
+/* contoh untuk dipakai di file php nya setelah create order */
+select add_ship(1,'10-Oct-2021');
+
+/* ini ga dipakai lagi, pake yg add_ship() aja */
 INSERT INTO shipment (courier_id, order_id, shipment_date, shipment_status)
 VALUES(1,1,'5-Dec-2021','Belum dikirim');
