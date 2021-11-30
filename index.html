@@ -31,7 +31,7 @@
               <a class="nav-link" href="#create">New</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#log">Log</a>
+              <a class="nav-link" href="#log">Shipment</a>
             </li>
           </ul>
         </div>
@@ -39,8 +39,8 @@
     </nav>
     <!-- Jumbotron-->
     <section class="jumbotron text-center text-white">
-      <img src="img/John_Xina-removebg-preview.png" alt="John Xina" width="200" class="rounded-circle" />
-      <h1 class="display-4">DripShip</h1>
+      <img src="img/logo1.png" alt="DripShip_logo" width="175" />
+      <h5 class="display-4">Where Your Fashion Feel Safe</h5>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#ffff"
@@ -59,49 +59,41 @@
         <div class="container">
           <div class="row">
             <div class="col">
-              <div class="container text-center">Sender</div>
+              <div class="container text-center"><b>Sender</b></div>
               <div class="mb-3 ms-5 me-5">
-                <label for="exampleInputEmail1" class="form-label">data1</label>
+                <label for="exampleInputEmail1" class="form-label">Name</label>
                 <input class="form-control" type="text" placeholder="Default input" aria-label="default input example" />
               </div>
               <div class="mb-3 ms-5 me-5">
-                <label for="exampleInputPassword1" class="form-label">data2</label>
+                <label for="exampleInputPassword1" class="form-label">Address</label>
                 <input class="form-control" type="text" placeholder="Default input" aria-label="default input example" />
               </div>
               <div class="mb-3 ms-5 me-5">
-                <label for="exampleInputPassword1" class="form-label">data2</label>
+                <label for="exampleInputPassword1" class="form-label">Postal Code</label>
                 <input class="form-control" type="text" placeholder="Default input" aria-label="default input example" />
               </div>
               <div class="mb-3 ms-5 me-5">
-                <label for="exampleInputPassword1" class="form-label">data2</label>
-                <input class="form-control" type="text" placeholder="Default input" aria-label="default input example" />
-              </div>
-              <div class="mb-3 ms-5 me-5">
-                <label for="exampleInputPassword1" class="form-label">data2</label>
+                <label for="exampleInputPassword1" class="form-label">Phone Number</label>
                 <input class="form-control" type="text" placeholder="Default input" aria-label="default input example" />
               </div>
               </form>
             </div>
             <div class="col">
-              <div class="container text-center">Recepient</div>
+              <div class="container text-center"><b>Recepient</b></div>
               <div class="mb-3 ms-5 me-5">
-                <label for="exampleInputEmail1" class="form-label">data1</label>
+                <label for="exampleInputEmail1" class="form-label">Name</label>
                 <input class="form-control" type="text" placeholder="Default input" aria-label="default input example" />
               </div>
               <div class="mb-3 ms-5 me-5">
-                <label for="exampleInputPassword1" class="form-label">data2</label>
+                <label for="exampleInputPassword1" class="form-label">Address</label>
                 <input class="form-control" type="text" placeholder="Default input" aria-label="default input example" />
               </div>
               <div class="mb-3 ms-5 me-5">
-                <label for="exampleInputPassword1" class="form-label">data2</label>
+                <label for="exampleInputPassword1" class="form-label">Postal Code</label>
                 <input class="form-control" type="text" placeholder="Default input" aria-label="default input example" />
               </div>
               <div class="mb-3 ms-5 me-5">
-                <label for="exampleInputPassword1" class="form-label">data2</label>
-                <input class="form-control" type="text" placeholder="Default input" aria-label="default input example" />
-              </div>
-              <div class="mb-3 ms-5 me-5">
-                <label for="exampleInputPassword1" class="form-label">data2</label>
+                <label for="exampleInputPassword1" class="form-label">Phone Number</label>
                 <input class="form-control" type="text" placeholder="Default input" aria-label="default input example" />
               </div>
             </form>
@@ -126,16 +118,17 @@
     <!--Log-->
     <section id="log">
       <div class="container text-center text-white">
-        <h2>Log Activity</h2>
+        <h2>Shipment</h2>
       </div>
       <div class="container mb-3 mt-3">
         <table class="table text-white" style="width: 100%" id="datatable">
           <thead>
             <tr>
-              <th scope="col">#</th>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
+              <th scope="col">Order ID</th>
+              <th scope="col">Shp.ID</th>
+              <th scope="col">C.Name</th>
+              <th scope="col">Shp.Date</th>
+              <th scope="col">Shp.Status</th>
             </tr>
           </thead>
           <tbody>
@@ -144,17 +137,20 @@
               <td>Mark</td>
               <td>Otto</td>
               <td>@mdo</td>
+              <td>done</td>
             </tr>
             <tr>
               <th scope="row">2</th>
               <td>Jacob</td>
               <td>Thornton</td>
               <td>@fat</td>
+              <td>done</td>
             </tr>
             <tr>
               <th scope="row">3</th>
               <td colspan="2">Larry the Bird</td>
               <td>@twitter</td>
+              <td>done</td>
             </tr>
           </tbody>
         </table>
