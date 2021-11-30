@@ -1,0 +1,20 @@
+body {
+  min-height: 2500px;
+  width: 200;
+  background-color: #3a404b;
+}
+.jumbotron {
+  padding-top: 6rem;
+  background-color: #3a404b;
+}
+#create {
+  background-color: white;
+}
+section {
+  padding-top: 5rem;
+}
+#log {
+  background-color: #3a404b;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
