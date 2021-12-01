@@ -49,15 +49,15 @@ $$ LANGUAGE plpgsql;
 /* create view untuk display di website */
 /* on going alias belum dikirim */
 CREATE OR REPLACE VIEW ongoing AS
-SELECT S.id, S.order_id, C.name as courier_name, S.shipment_date, S.shipment_status
-FROM shipment S, orders O, courier C
-WHERE C.id = S.courier_id AND S.shipment_status = 'Belum dikirim'
+SELECT S.order_id, S.id, S.shipment_date, O.shipment_type, S.courier_id, S.shipment_status
+FROM shipment S, orders O
+WHERE S.order_id = O.id AND S.shipment_status = 'Belum dikirim'
 ORDER BY S.id;
 /* done alias sudah dikirim */
 CREATE OR REPLACE VIEW done AS
-SELECT S.id, S.order_id, C.name as courier_name, S.shipment_date, S.shipment_status
-FROM shipment S, orders O, courier C
-WHERE C.id = S.courier_id AND S.shipment_status = 'Sudah dikirim'
+SELECT S.order_id, S.id, S.shipment_date, O.shipment_type, S.courier_id, S.shipment_status
+FROM shipment S, orders O
+WHERE S.order_id = O.id AND S.shipment_status = 'Sudah dikirim'
 ORDER BY S.id;
 
 

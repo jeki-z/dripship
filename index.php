@@ -20,7 +20,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-secondary shadow fixed-top">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#home">DripShip!</a>
+        <a class="navbar-brand" href="/dripship">DripShip!</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -30,10 +30,10 @@
               <a class="nav-link active" aria-current="page" href="#home">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#create">New</a>
+              <a class="nav-link" href="#create">Create Order</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#log">Shipment</a>
+              <a class="nav-link" href="shipment.php">Shipment</a>
             </li>
           </ul>
         </div>
@@ -54,60 +54,79 @@
 
     <!--Create-->
     <section id="create">
-      <div class="cointainer text-center">
-        <h3>Create New</h3>
-      </div>
-      <form>
+      <form action="add_order.php" method="POST">
+        <div class="cointainer text-center">
+          <h3>Customer Data</h3>
+        </div>
         <div class="container">
           <div class="row">
             <div class="col">
               <div class="container text-center"><b>Sender</b></div>
               <div class="mb-3 ms-5 me-5">
-                <label for="exampleInputEmail1" class="form-label">Name</label>
-                <input class="form-control" type="text" placeholder="Default input" aria-label="default input example" />
+                <label for="s-name" class="form-label">Name</label>
+                <input class="form-control" type="text" name="s-name" placeholder="Default input" />
               </div>
               <div class="mb-3 ms-5 me-5">
-                <label for="exampleInputPassword1" class="form-label">Address</label>
-                <input class="form-control" type="text" placeholder="Default input" aria-label="default input example" />
+                <label for="s-address" class="form-label">Address</label>
+                <input class="form-control" type="text" name="s-address" placeholder="Default input" />
               </div>
               <div class="mb-3 ms-5 me-5">
-                <label for="exampleInputPassword1" class="form-label">Postal Code</label>
-                <input class="form-control" type="text" placeholder="Default input" aria-label="default input example" />
+                <label for="s-pcode" class="form-label">Postal Code</label>
+                <input class="form-control" type="text" name="s-pcode" placeholder="Default input" />
               </div>
               <div class="mb-3 ms-5 me-5">
-                <label for="exampleInputPassword1" class="form-label">Phone Number</label>
-                <input class="form-control" type="text" placeholder="Default input" aria-label="default input example" />
+                <label for="s-phone" class="form-label">Phone Number</label>
+                <input class="form-control" type="text" name="s-phone" placeholder="Default input" />
               </div>
-              </form>
             </div>
             <div class="col">
               <div class="container text-center"><b>Recepient</b></div>
               <div class="mb-3 ms-5 me-5">
-                <label for="exampleInputEmail1" class="form-label">Name</label>
-                <input class="form-control" type="text" placeholder="Default input" aria-label="default input example" />
+                <label for="r-name" class="form-label">Name</label>
+                <input class="form-control" type="text" name="r-name" placeholder="Default input" />
               </div>
               <div class="mb-3 ms-5 me-5">
-                <label for="exampleInputPassword1" class="form-label">Address</label>
-                <input class="form-control" type="text" placeholder="Default input" aria-label="default input example" />
+                <label for="r-address" class="form-label">Address</label>
+                <input class="form-control" type="text" name="r-address" placeholder="Default input" />
               </div>
               <div class="mb-3 ms-5 me-5">
-                <label for="exampleInputPassword1" class="form-label">Postal Code</label>
-                <input class="form-control" type="text" placeholder="Default input" aria-label="default input example" />
+                <label for="r-pcode" class="form-label">Postal Code</label>
+                <input class="form-control" type="text" name="r-pcode" placeholder="Default input" />
               </div>
               <div class="mb-3 ms-5 me-5">
-                <label for="exampleInputPassword1" class="form-label">Phone Number</label>
-                <input class="form-control" type="text" placeholder="Default input" aria-label="default input example" />
+                <label for="r-phone" class="form-label">Phone Number</label>
+                <input class="form-control" type="text" name="r-phone" placeholder="Default input" />
               </div>
-            </form>
+              <br>
             </div>
-            <div class="row text-center">
+            <div class="cointainer text-center">
+              <h3>Order Data</h3>
+            </div>
+            <div class="row text-left">
+              <div class="mb-3 ms-5 me-5">
+                <label for="item-type" class="form-label">Item Type</label>
+                <input class="form-control" type="text" name="item-type" placeholder="Default input" />
+              </div>
+              <div class="mb-3 ms-5 me-5">
+                <label for="item-qty" class="form-label">Item Quantity</label>
+                <input class="form-control" type="number" name="item-qty" placeholder="Default input" />
+              </div>
+              <div class="mb-3 ms-5 me-5">
+                <label for="ship-type" class="form-label">Shipment Type</label>
+                <select class="form-select" name="ship-type" aria-label="Regular">
+                  <option value="Regular" selected>Regular</option>
+                  <option value="Premium">Premium</option>
+                </select>
+              </div>
+            </div>
+            <div class="row text-left">
               <div class="col">
-                <button type="submit" class="btn btn-primary ms-5" href="#order">Next</button>
+                <button type="submit" name="submit" value="submit" class="btn btn-primary ms-5">Submit</button>
               </div>
             </div>
           </div>
-          
         </div>
+      </form>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#3a404b"
@@ -117,47 +136,7 @@
       </svg>
     </section>
 
-    <!--Log-->
-    <section id="log">
-      <div class="container text-center text-white">
-        <h2>Shipment</h2>
-      </div>
-      <div class="container mb-3 mt-3">
-        <table class="table text-white" style="width: 100%" id="datatable">
-          <thead>
-            <tr>
-              <th scope="col">Order ID</th>
-              <th scope="col">Shp.ID</th>
-              <th scope="col">C.Name</th>
-              <th scope="col">Shp.Date</th>
-              <th scope="col">Shp.Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td>done</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-              <td>done</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td colspan="2">Larry the Bird</td>
-              <td>@twitter</td>
-              <td>done</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
