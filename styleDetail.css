@@ -8,3 +8,10 @@ body {
   background-color: white;
   min-height: 50px;
 }
+.tab {
+    display: inline-block;
+    margin-left: 40px;
+}
+pre {
+  tab-width: 2;
+}

@@ -41,7 +41,7 @@
     <!--Log-->
     <section id="table">
       <div class="container text-center text-white">
-        <h2>Shipment on-process</h2>
+        <h2>In shipping</h2>
       </div>
       <div class="container mb-3 mt-5">
         <table class="table text-white" style="width: 100%" id="datatable">
@@ -66,7 +66,7 @@
               echo "<td>".$ship["shipment_type"]."</td>";
               echo "<td>"."CR-".$ship["courier_id"]."</td>";
               echo "<td>".$ship["shipment_status"]."</td>";
-			  echo "<td><a href=\"edit.php?id=".$ship["id"]."\" class=\"btn btn-secondary btn-sm\">Edit</a> | <a href=\"delete.php?id=".$ship["id"]."\" class=\"btn btn-secondary btn-sm\">Delete</a></td>";
+			  echo "<td><a href=\"details.php?id=".$ship["id"]."\" class=\"btn btn-info btn-sm\">Details</a>  <a href=\"edit.php?id=".$ship["id"]."\" class=\"btn btn-secondary btn-sm\">Edit</a>  <a href=\"delete.php?id=".$ship["id"]."\" class=\"btn btn-danger btn-sm\">Delete</a></td>";
               echo "</tr>";
             }
             ?>
@@ -79,7 +79,7 @@
     </section>
     <section id="table">
       <div class="container text-center text-white">
-        <h2>Shipment done</h2>
+        <h2>Shipped</h2>
       </div>
       <div class="container mb-3 mt-5">
         <table class="table text-white" style="width: 100%" id="datatable">
@@ -104,7 +104,7 @@
               echo "<td>".$ship["shipment_type"]."</td>";
               echo "<td>"."CR-".$ship["courier_id"]."</td>";
               echo "<td>".$ship["shipment_status"]."</td>";
-			  echo "<td><a href=\"edit.php?id=".$ship["id"]."\" class=\"btn btn-secondary btn-sm\">Edit</a> | <a href=\"delete.php?id=".$ship["id"]."\" class=\"btn btn-secondary btn-sm\">Delete</a></td>";
+			  echo "<td><a href=\"details.php?id=".$ship["id"]."\" class=\"btn btn-info btn-sm\">Details</a>  <a href=\"edit.php?id=".$ship["id"]."\" class=\"btn btn-secondary btn-sm\">Edit</a>  <a href=\"delete.php?id=".$ship["id"]."\" class=\"btn btn-danger btn-sm\">Delete</a></td>";
               echo "</tr>";
             }
             ?>
@@ -121,7 +121,7 @@
       ></path>
     </svg>
     <section id="footer">
-      <div class="container text-center">footer</div>
+      <div class="container text-center"></div>
       <!--kasi penutup ato gmn -->
     </section>
 
