@@ -80,7 +80,7 @@
               </div>
             </div>
             <div class="col">
-              <div class="container text-center"><b>Recepient</b></div>
+              <div class="container text-center"><b>Recipient</b></div>
               <div class="mb-3 ms-5 me-5">
                 <label for="r-name" class="form-label">Name</label>
                 <input class="form-control" type="text" name="r-name" placeholder="Default input" />

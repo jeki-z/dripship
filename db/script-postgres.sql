@@ -41,7 +41,7 @@ CREATE OR REPLACE FUNCTION add_ship(o_id INT, o_date DATE)
 RETURNS integer AS $$
 BEGIN
 INSERT INTO shipment (courier_id, order_id, shipment_date, shipment_status)
-VALUES(floor(random()* (5-1 + 1) + 1),o_id,o_date + 3,'Belum dikirim');
+VALUES(floor(random()* (5-1 + 1) + 1),o_id,o_date + 3,'In shipping');
 RETURN 1;
 END;
 $$ LANGUAGE plpgsql;
@@ -51,13 +51,13 @@ $$ LANGUAGE plpgsql;
 CREATE OR REPLACE VIEW ongoing AS
 SELECT S.order_id, S.id, S.shipment_date, O.shipment_type, S.courier_id, S.shipment_status
 FROM shipment S, orders O
-WHERE S.order_id = O.id AND S.shipment_status = 'Belum dikirim'
+WHERE S.order_id = O.id AND S.shipment_status = 'In shipping'
 ORDER BY S.id;
 /* done alias sudah dikirim */
 CREATE OR REPLACE VIEW done AS
 SELECT S.order_id, S.id, S.shipment_date, O.shipment_type, S.courier_id, S.shipment_status
 FROM shipment S, orders O
-WHERE S.order_id = O.id AND S.shipment_status = 'Sudah dikirim'
+WHERE S.order_id = O.id AND S.shipment_status = 'Shipped'
 ORDER BY S.id;
 
 
@@ -82,4 +82,4 @@ select add_ship(1,'10-Oct-2021');
 
 /* ini ga dipakai lagi, pake yg add_ship() aja */
 INSERT INTO shipment (courier_id, order_id, shipment_date, shipment_status)
-VALUES(1,1,'5-Dec-2021','Belum dikirim');
+VALUES(1,1,'5-Dec-2021','In shipping');

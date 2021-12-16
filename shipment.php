@@ -52,6 +52,7 @@
               <th scope="col">Shp.Type</th>
               <th scope="col">Courier</th>
               <th scope="col">Shp.Status</th>
+			  <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
@@ -65,6 +66,7 @@
               echo "<td>".$ship["shipment_type"]."</td>";
               echo "<td>"."CR-".$ship["courier_id"]."</td>";
               echo "<td>".$ship["shipment_status"]."</td>";
+			  echo "<td><a href=\"edit.php?id=".$ship["id"]."\" class=\"btn btn-secondary btn-sm\">Edit</a> | <a href=\"delete.php?id=".$ship["id"]."\" class=\"btn btn-secondary btn-sm\">Delete</a></td>";
               echo "</tr>";
             }
             ?>
@@ -88,6 +90,7 @@
               <th scope="col">Shp.Type</th>
               <th scope="col">Courier</th>
               <th scope="col">Shp.Status</th>
+			  <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
@@ -101,6 +104,7 @@
               echo "<td>".$ship["shipment_type"]."</td>";
               echo "<td>"."CR-".$ship["courier_id"]."</td>";
               echo "<td>".$ship["shipment_status"]."</td>";
+			  echo "<td><a href=\"edit.php?id=".$ship["id"]."\" class=\"btn btn-secondary btn-sm\">Edit</a> | <a href=\"delete.php?id=".$ship["id"]."\" class=\"btn btn-secondary btn-sm\">Delete</a></td>";
               echo "</tr>";
             }
             ?>
