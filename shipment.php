@@ -31,7 +31,7 @@
               <a class="nav-link" href="/dripship/#create">Create Order</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#shipment">Shipment</a>
+              <a class="nav-link" href="shipment.php">Shipment</a>
             </li>
           </ul>
         </div>
@@ -95,7 +95,6 @@
           </thead>
           <tbody>
             <?php
-            $i = 1;
             $query = pg_query("SELECT * FROM done");
             while($ship = pg_fetch_array($query)){
               echo "<tr>";

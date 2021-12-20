@@ -2,7 +2,6 @@
 
 if(isset($_POST['status'])){
 
-        // ambil data dari formedit.php
 		$id = $_POST["id"];
 		$status = $_POST["status"];
 		
@@ -11,15 +10,14 @@ if(isset($_POST['status'])){
   $query = pg_query("UPDATE shipment SET shipment_status = '$status' WHERE id = $id");
 
         if( $query==TRUE ) {
-                // ubah berhasil alihkan ke daftarsiswa.php
                 header('Location: shipment.php');
         } else {
-                die("gagal mengubah..");
+                die("GAGAL GAN");
         }
 
 
 } else {
-        die("Akses dilarang...");
+        die("GAGAL GAN");
 
 }
 ?>

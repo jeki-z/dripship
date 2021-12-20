@@ -24,7 +24,7 @@ if(isset($_POST['submit'])){
     $o_id = pg_fetch_result(pg_query("SELECT count(*) from orders"), "count");
     $query_sh = pg_query("SELECT add_ship($o_id,'$tgl-$bln-$thn')");
     
-    if($query_o && $query_r && $query_s){
+    if($query_o && $query_r && $query_s && $query_sh){
         header('Location: shipment.php');
     } else{
         die("GAGAL GAN");
