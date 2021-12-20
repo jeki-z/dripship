@@ -85,7 +85,7 @@ $courier_name = $courier["name"];
                   <tr>
                      <!--max 57 -->
                      <th>ID</th>
-                     <td>: <?= $sender_id ?></td>
+                     <td>: CR-<?= $sender_id ?></td>
                   </tr>
                   <tr>
                      <!--max 57 -->
@@ -118,7 +118,7 @@ $courier_name = $courier["name"];
                   <tr>
                      <!--max 57 -->
                      <th>ID</th>
-                     <td>: <?= $recip_id ?></td>
+                     <td>: CR-<?= $recip_id ?></td>
                   </tr>
                   <tr>
                      <!--max 57 -->
@@ -151,7 +151,7 @@ $courier_name = $courier["name"];
                   <tr>
                      <!--max 57 -->
                      <th>Order ID</th>
-                     <td>: <?= $order_id ?></td>
+                     <td>: OD-<?= $order_id ?></td>
                   </tr>
                   <tr>
                      <!--max 57 -->
@@ -181,7 +181,7 @@ $courier_name = $courier["name"];
                   <tr>
                      <!--max 57 -->
                      <th>Shipment ID</th>
-                     <td>: <?= $id ?></td>
+                     <td>: SH-<?= $id ?></td>
                   </tr>
                   <tr>
                      <!--max 57 -->
@@ -194,7 +194,7 @@ $courier_name = $courier["name"];
                   </tr>
                   <tr>
                      <th>Courier ID</th>
-                     <td>: <?= $courier_id ?></td>
+                     <td>: CR-<?= $courier_id ?></td>
                   </tr>
                   <tr>
                      <th>Courier Name</th>

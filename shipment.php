@@ -57,7 +57,6 @@
           </thead>
           <tbody>
             <?php
-            $i = 1;
             $query = pg_query("SELECT * FROM ongoing");
             while($ship = pg_fetch_array($query)){
               echo "<tr>";
